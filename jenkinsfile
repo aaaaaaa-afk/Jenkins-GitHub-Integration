@@ -4,37 +4,44 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building application...'
+                echo 'Compile and package source code into build artifacts.'
+                echo 'Apache Maven'
             }
         }
-        stage('Test') {
+        stage('Unit and Integration Tests') {
             steps {
-                echo 'Running unit tests...'
+                echo 'Run automated unit tests to verify application functionality.'
+                echo 'JUnit'
             }
         }
         stage('Code Analysis') {
             steps {
-                echo 'Analyzing code quality...'
+                echo 'Analyze source code quality and check coding standards.'
+                echo 'SonarQube'
             }
         }
         stage('Security Scan') {
             steps {
-                echo 'Scanning for security vulnerabilities...'
+                echo 'Perform security scan to identify software vulnerabilities.'
+                echo 'Snyk'
             }
         }
-        stage('Staging Deploy') {
+        stage('Deploy to Staging') {
             steps {
-                echo 'Deploying to staging environment...'
+                echo 'Deploy build artifacts to the staging environment.'
+                echo 'AWS EC2'
             }
         }
-        stage('Staging Tests') {
+        stage('Integration Tests on Staging') {
             steps {
-                echo 'Running integration tests on staging...'
+                echo 'Run end-to-end integration tests in staging.'
+                echo 'Selenium'
             }
         }
-        stage('Production Deploy') {
+        stage('Deploy to Production') {
             steps {
-                echo 'Deploying to production environment...'
+                echo 'Deploy production-ready release to the live environment.'
+                echo 'AWS EC2'
             }
         }
     }
